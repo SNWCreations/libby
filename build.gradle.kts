@@ -100,7 +100,7 @@ subprojects {
 
     signing {
         setRequired {
-            gradle.taskGraph.allTasks.any { it is PublishToMavenRepository }
+            false // gradle.taskGraph.allTasks.any { it is PublishToMavenRepository } // no signing on JitPack
         }
         useGpgCmd()
         sign(publishing.publications["mavenJava"])
