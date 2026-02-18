@@ -1,7 +1,7 @@
 plugins {
     `java-library`
     `maven-publish`
-    signing
+    // signing
 }
 
 allprojects {
@@ -98,11 +98,13 @@ subprojects {
         }
     }
 
+    /*
     signing {
         setRequired {
-            false // gradle.taskGraph.allTasks.any { it is PublishToMavenRepository } // no signing on JitPack
+            gradle.taskGraph.allTasks.any { it is PublishToMavenRepository }
         }
         useGpgCmd()
         sign(publishing.publications["mavenJava"])
     }
+    */
 }
